@@ -1,6 +1,13 @@
 import produceData from "../mockData/produce.json";
 
-// The object returned should have keys set to the id's of the produce data objects with their values as the respective produce data objects.
+const POPULATE = "produce/POPULATE";
+
+export const populateProduce = () => {
+  return {
+    type: POPULATE,
+    produce: produceData,
+  };
+};
 
 export default function produceReducer(state = {}, action) {
   switch (action.type) {
@@ -14,12 +21,3 @@ export default function produceReducer(state = {}, action) {
       return state;
   }
 }
-
-const POPULATE = "produce/POPULATE";
-
-export const populateProduce = () => {
-  return {
-    type: POPULATE,
-    produce: produceData,
-  };
-};
