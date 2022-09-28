@@ -1,6 +1,7 @@
 import { addItem, changeItemCount } from "../../store/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleLike } from "../../store/produce";
+import { showCart } from "../../store/sidebar";
 
 function ProduceDetails({ produce }) {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function ProduceDetails({ produce }) {
     } else {
       dispatch(addItem(id));
     }
+    dispatch(showCart());
   }
 
   return (

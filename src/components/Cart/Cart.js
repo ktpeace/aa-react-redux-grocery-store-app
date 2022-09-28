@@ -2,11 +2,30 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteAllItems } from "../../store/cart";
+// import { useEffect } from "react";
 
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const produce = useSelector((state) => state.produce);
+
+  // phase 5 extra stuff
+  // const fancyCart = {};
+  // const cartWithProduceDetails = () => {
+  //   for (let i = 1; i < Object.values(cart).length; i++) {
+  //     fancyCart[i] = {
+  //       ...cart[i],
+  //       name: produce[i].name,
+  //       liked: produce[i].liked,
+  //     };
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   cartWithProduceDetails();
+  //   console.log("fancyCart", fancyCart);
+  // }, [cart]);
+  // end phase 5 extra stuff
 
   const cartItems = Object.values(cart).map((item) => {
     return {
